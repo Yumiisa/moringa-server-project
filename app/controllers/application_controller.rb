@@ -6,8 +6,8 @@ class ApplicationController < Sinatra::Base
     song=Song.all
     song.to_json
   end
-  get "/artists/:id" do
-  art=Artist.find(params[:id])
+  get "/artists" do
+  art=Artist.all
   art.to_json
   end
 post "/artists" do
