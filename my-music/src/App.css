@@ -91,3 +91,23 @@ button{
   border: 1px black solid;
   text-transform: capitalize;
 }
+.artists{
+width: 50%;
+ display: flex;
+ flex-wrap: wrap;
+ 
+ justify-content: space-between;
+ align-items: center;
+  
+}
+.artists img{
+  display: flex;
+  width: 120px;
+  height: 80px;
+padding: 10px;
+border-radius:10px ;
+}
+.name{
+  position: absolute;
+  top: 15%;
+}
