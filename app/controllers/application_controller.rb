@@ -21,9 +21,9 @@ end
 patch "/artist/:id" do
   artist_update=Artist.find(params[:id])
   artist_update.update(
-    name:params[:name],
-    photo_url:params[:photo_url],
-    nationality:params[:nationality]
+    name:params[:name]
+    # photo_url:params[:photo_url],
+    # nationality:params[:nationality]
   )
   artist_update.to_json
 end

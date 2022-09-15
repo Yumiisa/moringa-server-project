@@ -6,33 +6,15 @@ import UpdateArtist from './UpdateArtist'
 
 const DisplayArtist = ({deleteArtist}) => {
     const[artists,setArtists] = useState([])
-    const[name,setName]=useState('')
-    const[photo_url,setPhotoUrl]=useState('')
-    const[nationality,setNationality]=useState('')
+    
     useEffect(() => { 
         axios.get("http://localhost:9292/artists")
         .then((res)=>{
         setArtists(res.data)
         })
     }, [])
-    // console.log(artists);
- const update =(id)=>{
-    console.log(id)
-    axios.patch(`http://localhost:9292/artists/${id}`, {
-         name:name,
-    photo_url:photo_url,
-    nationality:nationality
-    })
-    const updateArtist=artists.map((artist)=>{
-        if (artist.id ===id){
-       return id
-        }
-        else{
-            return artist
-        }
-    })
-    setArtists(updateArtist)
- }
+   
+
     
   return (
     <div className="displa-artist">
@@ -47,10 +29,13 @@ const DisplayArtist = ({deleteArtist}) => {
             <div className="artists" key={artist.id}>
              
                 <h4>{artist.name}</h4>
+                <UpdateArtist id={artist.id} artists={artists} setArtists={setArtists} name={artist.name} />
               
             <img src={artist.photo_url} alt="artist"/>
-            
-        <button onClick={()=>update(artist.id)}>update</button>
+            <h4>{artist.nationality}</h4>
+           
+            {/* <Link to='/updateArtist'><button className="update">update artist</button></Link>  */}
+        {/* <button onClick={()=>update(artist.id)}>update</button> */}
           <DeleteArtist id={artist.id} artists={artists} setArtists={setArtists} />
        
             </div>

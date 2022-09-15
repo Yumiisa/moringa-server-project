@@ -32,6 +32,7 @@ border-radius:10px ;
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-left: 50%;
  
 
   
@@ -40,10 +41,12 @@ border-radius:10px ;
 
         color: rgb(37, 34, 34);
         text-decoration: none;
-         margin: 0px 10px;
+         /* margin: 0px 10px; */
         padding: 10px;
         display: flex;
+      
         flex-direction: row;
+
           
        
         border-radius: 10px;
@@ -92,16 +95,18 @@ button{
   text-transform: capitalize;
 }
 .artists{
-width: 50%;
- display: flex;
- flex-wrap: wrap;
- 
- justify-content: space-between;
+width: 70%;
+ display: grid;
+ grid-template-columns: 200px auto auto auto auto;
+ grid-template-rows: auto auto auto auto;
+ gap:15px;
  align-items: center;
+ 
   
 }
 .artists img{
   display: flex;
+  justify-content: center;
   width: 120px;
   height: 80px;
 padding: 10px;
@@ -109,5 +114,35 @@ border-radius:10px ;
 }
 .name{
   position: absolute;
-  top: 15%;
+  top: 74px;
+  text-transform: capitalize;
+}
+.image{
+  position:absolute;
+  top:79px;
+  left:29%;
+  text-transform: capitalize;
+
+}
+.origin{
+  position: absolute;
+  top: 84px;
+  left:45%;
+  text-transform: capitalize;
+}
+.delete{
+  background-color: red;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+}
+.form{
+  width: 70%;
+  height: 50px;
+  border-radius: 10px;
+} 
+.update{
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
 }
